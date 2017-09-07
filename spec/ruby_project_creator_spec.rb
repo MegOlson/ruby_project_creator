@@ -35,4 +35,9 @@ describe("Create#root_directory") do
       expect(File.exists?("new_project_spec.rb")).to(eq(true))
     }
   end
+  it("populates Gemfile") do
+    FileUtils.cd("../new_project"){
+      expect(File.zero?("../new-project/Gemfile")).to(eq(false))
+    }
+  end
 end

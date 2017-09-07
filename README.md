@@ -5,7 +5,8 @@
 ## Specifications
 
 * Create root directory
-  * Example Output: root
+  * Example Input: "new_project"
+  * Example Output: new directory "Desktop/new_project"
 * Create directories for lib and spec within the root directory
   * Example Output: root/lib root/spec
 * Create files within the root directory for README and Gemfile

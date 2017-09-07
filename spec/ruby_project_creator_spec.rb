@@ -9,4 +9,20 @@ describe("Create#root_directory") do
       expect(FileUtils.pwd()).to(eq("/Users/Guest/Desktop/new_project"))
     }
   end
+  it("creates lib folder within the root directory") do
+    FileUtils.cd("../new_project/lib"){
+      expect(FileUtils.pwd()).to(eq("/Users/Guest/Desktop/new_project/lib"))
+    }
+  end
+  it("creates spec folder within the root directory") do
+    FileUtils.cd("../new_project/spec"){
+      expect(FileUtils.pwd()).to(eq("/Users/Guest/Desktop/new_project/spec"))
+    }
+  end
+  it("creates spec and lib folders within the root directory") do
+    FileUtils.cd("../new_project/"){
+      expect(File.exists?("Gemfile")).to(eq(true))
+      expect(File.exists?("README.md")).to(eq(true))
+    }
+  end
 end

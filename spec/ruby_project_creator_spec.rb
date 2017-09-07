@@ -25,4 +25,14 @@ describe("Create#root_directory") do
       expect(File.exists?("README.md")).to(eq(true))
     }
   end
+  it("creates rb file inside of lib folder") do
+    FileUtils.cd("../new_project/lib"){
+      expect(File.exists?("new_project.rb")).to(eq(true))
+    }
+  end
+  it("creates rb file inside of spec folder") do
+    FileUtils.cd("../new_project/spec"){
+      expect(File.exists?("new_project_spec.rb")).to(eq(true))
+    }
+  end
 end
